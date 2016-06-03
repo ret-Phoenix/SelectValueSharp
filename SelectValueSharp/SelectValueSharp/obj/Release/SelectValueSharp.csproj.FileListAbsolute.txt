@@ -1,0 +1,6 @@
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Release\SelectValueSharp.exe.config
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Release\SelectValueSharp.exe
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Release\SelectValueSharp.csprojResolveAssemblyReference.cache
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Release\SelectValueSharp.MainForm.resources
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Release\SelectValueSharp.csproj.GenerateResource.Cache
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Release\SelectValueSharp.exe

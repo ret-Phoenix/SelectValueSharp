@@ -1,0 +1,16 @@
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Debug\SelectValueSharp.exe.config
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Debug\SelectValueSharp.exe
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Debug\SelectValueSharp.pdb
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.csprojResolveAssemblyReference.cache
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.exe
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.pdb
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.MainForm.resources
+C:\Users\savage\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.csproj.GenerateResource.Cache
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Debug\SelectValueSharp.exe.config
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Debug\SelectValueSharp.exe
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\bin\Debug\SelectValueSharp.pdb
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.csprojResolveAssemblyReference.cache
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.MainForm.resources
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.csproj.GenerateResource.Cache
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.exe
+C:\Users\usergey\Documents\SharpDevelop Projects\SelectValueSharp\SelectValueSharp\obj\Debug\SelectValueSharp.pdb
