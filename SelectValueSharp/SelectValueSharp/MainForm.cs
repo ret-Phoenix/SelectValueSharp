@@ -21,6 +21,7 @@ namespace SelectValueSharp
 	public partial class MainForm : Form
 	{
 		string fileNameOut;
+		string bigStr;
 		
 		public MainForm()
 		{
@@ -35,86 +36,80 @@ namespace SelectValueSharp
 		}
 		void TextBox1TextChanged(object sender, EventArgs e)
 		{
-			//int x = 0;
 			if (textBoxSearchValue.Text == string.Empty) {
-				listBoxResult.Items.AddRange(listBoxAllValues.Items);
+				listBoxResult.BeginUpdate();
+				listBoxResult.Items.Clear();
+				string[] str = bigStr.Split('\r');
+				listBoxResult.Items.AddRange(str);
+				listBoxResult.EndUpdate();
 				return;
 			}
 			
-			string match = @".*(" + textBoxSearchValue.Text + @").*";
-			match = match.Replace(" ", @".*");
+			var matches = Regex.Matches(bigStr, @"(.*)(" + textBoxSearchValue.Text.Replace(" ", @".*") + @")(.*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+			int counter = 0;
+			listBoxResult.BeginUpdate();
 			listBoxResult.Items.Clear();
-			
-			Regex newReg = new Regex(match, RegexOptions.IgnoreCase);
-			
-			// Examine text box length 
-			if (textBoxSearchValue.Text.Length != 0) {
-				foreach (var strv in listBoxAllValues.Items) {
-					if (newReg.IsMatch(strv.ToString())) {
-						listBoxResult.Items.Add(strv);
-						listBoxResult.SetSelected(0, true);
-					}
-				}
+			foreach (Match item in matches) {
+				counter++;
+				listBoxResult.Items.Add(item);
 			}
+			listBoxResult.EndUpdate();
+			
 		}
 	
 		void ListBox2KeyDown(object sender, KeyEventArgs e)
 		{
 			if (Keys.Enter == e.KeyCode) {
-				// MessageBox.Show("2: " + listBox2.SelectedItem.ToString());
 				string сurValue = listBoxResult.SelectedItem.ToString();
-//				if (сurValue == string.Empty) {
-//					сurValue = textBoxSearchValue.Text;
-//				}
 				ResultToFile(сurValue);
 				Application.Exit();
 			} else if (Keys.Left == e.KeyCode) {
-				textBoxSearchValue.Text = listBoxResult.SelectedItem.ToString();
+				//textBoxSearchValue.Text = listBoxResult.SelectedItem.ToString();
 				textBoxSearchValue.Focus();
 			} else if (Keys.Right == e.KeyCode) {
-				textBoxSearchValue.Text = listBoxResult.SelectedItem.ToString();
+				//textBoxSearchValue.Text = listBoxResult.SelectedItem.ToString();
 				textBoxSearchValue.Focus();
 			}
 		}
 
 		void TextBox1KeyDown(object sender, KeyEventArgs e)
 		{
-			if (Keys.Down == e.KeyCode) {
+			if (e.KeyCode == Keys.Down) {
 				listBoxResult.Select();
-			} else if (Keys.Enter == e.KeyCode) {
+			} else if (e.KeyCode == Keys.Enter) {
 				string сurValue = textBoxSearchValue.Text;
 				ResultToFile(сurValue);
+				Application.Exit();
+			} else if (e.KeyCode == Keys.Escape) {
+				ResultToFile("");
 				Application.Exit();
 			}
 		}
 		
-		void ResultToFile(string valueToFile) {
-			StreamWriter sw = new StreamWriter(fileNameOut, false,System.Text.Encoding.Default);
-			//sw.Write(valueToFile, System.Text.Encoding.GetEncoding(1251));
-			sw.Write(valueToFile);
+		void ResultToFile(string valueToFile)
+		{
+			StreamWriter sw = new StreamWriter(fileNameOut, false, System.Text.Encoding.Default);
+			sw.Write(valueToFile.Trim());
 			sw.Close();
 		}
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
 			string[] appArgs = System.Environment.GetCommandLineArgs();
-			
-//			foreach (string strVal in appArgs) {
-//				listBox2.Items.Add(strVal);
-//			}
-			
-			string line;
-			string fileName = appArgs[1]; //"c:\\work\\portable\\v8CfgAddsAhk\\tmp\\module.1s";
+			string fileName = appArgs[1];
 			fileNameOut = fileName;
 			FileStream sss = File.Open(fileName, FileMode.Open, FileAccess.Read);
 			if (sss != null) {
-				StreamReader reader = new StreamReader(sss, System.Text.Encoding.GetEncoding(1251));
-				while ((line = reader.ReadLine()) != null) {
-					listBoxAllValues.Items.Add(line);
-					listBoxResult.Items.Add(line);
-                    	
-				}
+				var reader = new StreamReader(sss, System.Text.Encoding.GetEncoding(1251));
+				bigStr = reader.ReadToEnd();
 				sss.Close();
+				
+				listBoxResult.Items.Clear();
+				string[] str = bigStr.Split('\r');
+				listBoxResult.Items.AddRange(str);
+				listBoxResult.EndUpdate();
+				
 			}
 		}
 	}

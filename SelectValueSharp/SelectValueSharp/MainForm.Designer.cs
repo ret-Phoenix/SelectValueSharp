@@ -15,7 +15,6 @@ namespace SelectValueSharp
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.TextBox textBoxSearchValue;
-		private System.Windows.Forms.ListBox listBoxAllValues;
 		private System.Windows.Forms.ListBox listBoxResult;
 		
 		/// <summary>
@@ -40,7 +39,6 @@ namespace SelectValueSharp
 		private void InitializeComponent()
 		{
 			this.textBoxSearchValue = new System.Windows.Forms.TextBox();
-			this.listBoxAllValues = new System.Windows.Forms.ListBox();
 			this.listBoxResult = new System.Windows.Forms.ListBox();
 			this.SuspendLayout();
 			// 
@@ -53,15 +51,6 @@ namespace SelectValueSharp
 			this.textBoxSearchValue.TabIndex = 0;
 			this.textBoxSearchValue.TextChanged += new System.EventHandler(this.TextBox1TextChanged);
 			this.textBoxSearchValue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1KeyDown);
-			// 
-			// listBoxAllValues
-			// 
-			this.listBoxAllValues.FormattingEnabled = true;
-			this.listBoxAllValues.Location = new System.Drawing.Point(12, 43);
-			this.listBoxAllValues.Name = "listBoxAllValues";
-			this.listBoxAllValues.Size = new System.Drawing.Size(266, 82);
-			this.listBoxAllValues.TabIndex = 1;
-			this.listBoxAllValues.Visible = false;
 			// 
 			// listBoxResult
 			// 
@@ -79,9 +68,9 @@ namespace SelectValueSharp
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(499, 319);
 			this.Controls.Add(this.listBoxResult);
-			this.Controls.Add(this.listBoxAllValues);
 			this.Controls.Add(this.textBoxSearchValue);
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SelectValueSharp";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.ResumeLayout(false);
